@@ -1,46 +1,45 @@
-
+import { Link } from "react-router-dom";
+import Nexus from "../Nexus/NEXUS.png";
 
 const HomePage = () => {
   return (
-    <div className="
-bg-[#0a1f94ad]
-">
-        <h1>Welcome to Escape The System</h1>
-        <h2>Project Nexus awaits</h2>
+    <div style={{ backgroundImage: `url(${Nexus})`, backgroundSize: "cover" }}
+      className="bg-cover bg-center bg-no-repeat min-h-screen p-4 md:p-8 flex items-center justify-center bg-neutral-950">
+        <header className="text-center space-y-4 w-full"></header>
+        <h1 className="absolute top-8 left-15 transform font-bold text-sm md:text-7xl italic tracking-tighter text-green-500 drop-shadow-[0_0_15px_rgba(34,197,94,0.9)]">Welcome to Escape The System</h1>
+        
+        <h2 className="absolute top-35 left-80  text-4xl tracking-widest font-mono uppercase bg-linear-to-r from-green-200 drop-shadow-[0_0_8px_rgba(34,197,94,0.70)] animate-pulse bg-clip-text" >Project Nexus awaits</h2>    
         <div>
-            <p>You are trapped deep inside Project NEXUS – a top-secret,
-                 now abandoned artificial intelligence research facility.
-                  The systems have locked down, the alarms are flashing red,
-                   and all exits are electronically sealed. Your only chance of
-                    survival is to outsmart the facility’s remaining security systems,
-                     room by room.Game ObjectiveYour ultimate goal is to reach the Control
-                      Room and override the main security lock to escape to freedom. How to
-                       PlayNavigate Between Rooms: You can move freely back and forth
-                        between the facility's different sectors
-                         (the Laboratory, the Server Room, and the Control Room)
-                          using the navigation menu. 
-                          Inspect Your Surroundings:
-                           Every room contains a specific problem or a 
-                           locked terminal. Read the text on the screen
-                            carefully to understand what is blocking your path.
-                             Collect Items: When you investigate objects or solve problems,
-                              you will discover crucial items. These will automatically be
-                               added to your Inventory bar, which remains visible at the top
-                                of the screen at all times.Solve the Puzzle Chain: Each room
-                                 requires you to use the correct item from your inventory
-                                  at the right time. Solving one puzzle will almost always
-                                   grant you the exact tool you need to clear the next room.
-                                    Your Three ChallengesThe Laboratory:
-                                     Find a power source in the pitch-black starting zone.
-                                      The Server Room: Restore power to the main mainframe
-                                       to access the facility's central security clearances.
-                                        The Control Room: Use your collected clearances to
-                                         bypass the electronic lock and open the emergency
-                                          exit.The clock is ticking, and the system is becoming
-                                           increasingly unstable. Good luck!</p>
-            <button>Let's go!</button>
-        </div>
-    </div>
+            <p className="text-olive-400 absolute top-70 left-40 text-2xl">
+                You are trapped deep inside Project NEXUS – a top-secret, <br />
+                now abandoned artificial intelligence research facility.<br />
+                The systems have locked down, the alarms are flashing red,<br /> 
+                and all exits are electronically sealed. Your only chance of<br />
+                survival is to outsmart the facility’s remaining security systems,
+                room by room.</p>
+
+                <p className="text-olive-400 absolute top-120 left-40 text-2xl"
+                >The rooms.</p>
+                <ul className=" absolute top-130 left-40 text-xl">
+                <li className="text-olive-500 text-shadow-lg/400">
+		            1.Server Room <br />
+		            2.Security Room <br />
+		            3.Archives <br />
+		            4.Reactor Room <br />
+		            5.Vault <br />
+		            6.Exit Node </li>
+              </ul>
+              <p className="text-olive-400 absolute top-180 left-40 text-shadow-lg/800 animate-pulse">
+     		        The clock is ticking. Good luck! </p>
+
+              <Link to="server-room" className="absolute top-240 left-387 ">
+              <button type="button" className="bg-olive-400 hover:bg-olive-700 text-grey-100 font-bold py-5 px-9 ">Let's go!
+              </button>
+              </Link>
+              
+          </div>
+    
+  </div>
   )
 }
 
