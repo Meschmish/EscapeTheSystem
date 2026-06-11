@@ -1,20 +1,23 @@
-import "./App.css";
-import HomePage from "./rooms/HomePage";
-import ServerRoom from "./rooms/ServerRoom";
-import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { GameProvider } from './context/context';
+import { RoomPage } from './rooms/RoomPage';
+import { HomePage } from './rooms/HomePage';
+import { VictoryPage } from './rooms/VictoryPage';
+import { Inventory } from './components/Inventory';
 
-const App = () => {
+function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
+    <GameProvider>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/server-room" element={<ServerRoom />} />
+          <Route path="/room/:roomPath" element={<RoomPage />} />
+          <Route path="/victory" element={<VictoryPage />} />
         </Routes>
-      </div>
-    </BrowserRouter>
+        <Inventory />
+      </BrowserRouter>
+    </GameProvider>
   );
-};
-
+}
 
 export default App;
