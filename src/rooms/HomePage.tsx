@@ -1,45 +1,55 @@
 import { Link } from "react-router-dom";
 import Nexus from "../Nexus/NEXUS.png";
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
-    <div style={{ backgroundImage: `url(${Nexus})`, backgroundSize: "cover" }}
-      className="bg-cover bg-center bg-no-repeat min-h-screen p-4 md:p-8 flex items-center justify-center bg-neutral-950">
-        <header className="text-center space-y-4 w-full"></header>
-        <h1 className="absolute top-8 left-15 transform font-bold text-sm md:text-7xl italic tracking-tighter text-green-500 drop-shadow-[0_0_15px_rgba(34,197,94,0.9)]">Welcome to Escape The System</h1>
-        
-        <h2 className="absolute top-35 left-80  text-4xl tracking-widest font-mono uppercase bg-linear-to-r from-green-200 drop-shadow-[0_0_8px_rgba(34,197,94,0.70)] animate-pulse bg-clip-text" >Project Nexus awaits</h2>    
-        <div>
-            <p className="text-olive-400 absolute top-70 left-40 text-2xl">
-                You are trapped deep inside Project NEXUS – a top-secret, <br />
-                now abandoned artificial intelligence research facility.<br />
-                The systems have locked down, the alarms are flashing red,<br /> 
-                and all exits are electronically sealed. Your only chance of<br />
-                survival is to outsmart the facility’s remaining security systems,
-                room by room.</p>
+    <div className="w-full min-h-screen bg-neutral-950 flex flex-col justify-center items-center">
+  
+  <div 
+    style={{ backgroundImage: `url(${Nexus})`, backgroundSize: "cover" }}
+    className="bg-cover bg-center bg-no-repeat w-full min-h-screen p-6 md:p-12 lg:p-24 flex flex-col justify-center items-start text-white relative"
+  >
+    <div className="w-full max-w-4xl space-y-4 md:space-y-6 mb-8 mt-12 md:mt-0">
+      <h1 className="font-bold text-3xl md:text-5xl lg:text-7xl italic tracking-tighter text-green-500 drop-shadow-[0_0_15px_rgba(34,197,94,0.9)] uppercase">
+        Welcome to Escape The System
+      </h1>
+      
+      <h2 className="text-xl md:text-3xl lg:text-4xl tracking-widest font-mono uppercase bg-linear-to-r from-green-200 to-green-500 drop-shadow-[0_0_8px_rgba(34,197,94,0.70)] animate-pulse bg-clip-text text-transparent">
+        Project Nexus awaits
+      </h2>    
+    </div>
 
-                <p className="text-olive-400 absolute top-120 left-40 text-2xl"
-                >The rooms.</p>
-                <ul className=" absolute top-130 left-40 text-xl">
-                <li className="text-olive-500 text-shadow-lg/400">
-		            1.Server Room <br />
-		            2.Security Room <br />
-		            3.Archives <br />
-		            4.Reactor Room <br />
-		            5.Vault <br />
-		            6.Exit Node </li>
-              </ul>
-              <p className="text-olive-400 absolute top-180 left-40 text-shadow-lg/800 animate-pulse">
-     		        The clock is ticking. Good luck! </p>
+    <div className="w-full max-w-3xl space-y-6 md:space-y-8 font-mono">
+      <p className="text-olive-400 text-sm md:text-lg lg:text-xl leading-relaxed max-w-2xl">
+        You are trapped deep inside Project NEXUS – a top-secret, 
+        now abandoned artificial intelligence research facility.
+        The systems have locked down, the alarms are flashing red, 
+        and all exits are electronically sealed. Your only chance of 
+        survival is to outsmart the facility’s remaining security systems, 
+        room by room.
+      </p>
 
-              <Link to="server-room" className="absolute top-240 left-387 ">
-              <button type="button" className="bg-olive-400 hover:bg-olive-700 text-grey-100 font-bold py-5 px-9 ">Let's go!
-              </button>
-              </Link>
-              
-          </div>
-    
+      <div className="space-y-3 bg-black/10 backdrop-blur-md w-62.5">
+        <p className="text-olive-400 font-bold text-lg md:text-2xl">
+          Go to the rooms:
+        </p>
+        <ul className=" gap-3 max-w-xl text-base md:text-xl">
+          <li><Link to="/room/server-room" className="text-olive-500 hover:text-green-300 transition drop-shadow-md">Server Room</Link></li>
+          <li><Link to="/room/security-room" className="text-olive-500 hover:text-green-300 transition drop-shadow-md">Security Room</Link></li>
+          <li><Link to="/room/archives-room" className="text-olive-500 hover:text-green-300 transition drop-shadow-md">Archives</Link></li>
+          <li><Link to="/room/reactor-room" className="text-olive-500 hover:text-green-300 transition drop-shadow-md">Reactor Room</Link></li>
+          <li><Link to="/room/vault-room" className="text-olive-500 hover:text-green-300 transition drop-shadow-md">Vault</Link></li>
+          <li><Link to="/room/exit-node" className="text-olive-500 hover:text-green-300 transition drop-shadow-md">Exit Node</Link></li>
+        </ul>
+      </div>
+
+      <p className="text-green-500  text-base md:text-2xl font-bold tracking-wide drop-shadow-[0_0_8px_rgba(34,197,94,0.80)] animate-pulse">
+        The clock is ticking. Good luck!
+      </p>
+    </div>
+
   </div>
+</div>
   )
 }
 
