@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Nexus from "../Nexus/NEXUS.png";
 
+
 export const HomePage = () => {
   return (
     <div className="w-full min-h-screen bg-neutral-950 flex flex-col justify-center items-center">
@@ -50,6 +51,7 @@ export const HomePage = () => {
 
   </div>
 </div>
+
   )
 }
 
